@@ -11,17 +11,25 @@
 using namespace std;
 
 int n;
-vector<vector<int>> matrix; // 인접 행렬
-vector<int> V, S, dist, path; // V: 전체 정점 집합, S: 결과가 나온 집합, dist: 각 정점 최단거리, path: 각 정점 최단경로 
+vector<vector<int>> matrix, route; // 인접 행렬, 각 정점별 최단경로
+vector<int> V, S, dist; // V: 전체 정점 집합, S: 결과가 나온 집합, dist: 각 정점 최단거리
 
 bool comp(int a, int b) {
 	return dist[a] < dist[b];
 }
 
-void dijkstra() {
+void dijkstra(int start) {
 
-	for (int i = 2; i <= n; i++) {
-		dist[i] = matrix[1][i]; // D값 초기화
+	for (int i = 0; i < n+1; i++) {
+		for (int j = 0; j < n+1; j++) {
+			if (j == 0)	route[i][j] = start;
+			else route[i][j] = 0;
+		}
+	}
+
+	for (int i = 1; i <= n; i++) {
+		if (i != start)
+			dist[i] = matrix[start][i]; // D값 초기화
 	}
 
 	for (int i = 1; i <= n - 1; i++) {
@@ -37,44 +45,41 @@ void dijkstra() {
 		int w = result[0];
 		S.push_back(w);
 
+		route[start-1][w]++; //route[][]의 첫 번째 행은 각 정점들이 start점을 제외하고 지나간 경로 개수 입력
+		route[w][route[start - 1][w]] = w; // 최소 경로 마지막에 자신 노드 입력
+
 		for (int v : result) {
 			if (dist[v] > dist[w] + matrix[w][v]) {
 				dist[v] = dist[w] + matrix[w][v];
-				path[v] = w;
+				//path[v] = w;
+
+				for (int k = 0; k < n; k++) {
+					route[v][k] = route[w][k];
+				}
+				route[start - 1][v] = route[start - 1][w];
 			}
 		}
 	}
 }
 
-void printResult(int graphNum) {
+void printRoute(int start, int graphNum) {
 	cout << "그래프 [" << graphNum << "]" << endl << "------------------------------------" << endl;
-	cout << "시작점: 1" << endl;
-
-	for (int i = 2; i <= n; i++) {
-
-		/* 최단경로를 스택에 저장하여 시작점부터 출력 */
-		int u = i, v = 1;
-		stack<int> s;
-		s.push(u);
-
-		while (u != v) {
-			int next = path[u]; // 이전 노드 탐색
-			s.push(next);
-			u = next;
+	printf("시작점: %d\n", start);
+	for (int i = 1; i <= n; i++) {
+		if (dist[i] > 0) {
+			printf("정점[%d]: ", i);
+			for (int j = 0; j <= route[start-1][i]; j++) {
+				if (j == route[start-1][i])
+					printf("%d", route[i][j]);
+				else
+					printf("%d - ", route[i][j]);
+			}
+			printf(", 길이: %d", dist[i]);
+			printf("\n");
 		}
+	}	
+	cout << "------------------------------------" << endl;
 
-		cout << "정점 [" << i << "] : ";
-
-		while (!s.empty()) {
-			if (s.size() > 1)
-				cout << s.top() << " - ";
-			else
-				cout << s.top() << ", ";
-			s.pop();
-		}
-		cout << "길이: " << dist[i] << endl;
-	}
-	cout << "====================================" << endl << endl;
 }
 
 void init() {
@@ -82,7 +87,7 @@ void init() {
 	V.clear();
 	S.clear();
 	dist.clear();
-	path.clear();
+	route.clear();
 }
 
 int main() {
@@ -103,17 +108,18 @@ int main() {
 			}
 
 			fin >> n;
-			dist.resize(n + 1);
-			path.resize(n + 1, 1);
+			dist.resize(n + 1, -1);
 
 			for (int i = 0; i <= n; i++) {
 				vector<int> tp(n + 1, INF);
 				matrix.push_back(tp);
+				route.push_back(tp);
 				if (i != 0) V.push_back(i);
 			}
 
-			dist[1] = 0; // source
-			S.push_back(1);
+			int start = 1;
+			dist[start] = 0; // source
+			S.push_back(start);
 
 			fin >> ws;
 
@@ -136,10 +142,10 @@ int main() {
 				}
 			}
 
-			dijkstra();
+			dijkstra(start);
 
-			printResult(graphNum++);
-
+			printRoute(start, graphNum++);
+			cout << endl;
 			continue;
 		}
 		fin.clear();

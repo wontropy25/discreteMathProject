@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="dijkstra.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="dijkstra.cpp">
+    <ClCompile Include="성원님코드.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
