@@ -15,48 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArrGraph.cpp">
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Graph.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Graph.cpp">
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\main - 설명.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ArrGraph2.cpp">
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Node.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Queue.cpp">
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Queue.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt">
+    <ClInclude Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Graph.h">
       <Filter>소스 파일</Filter>
-    </Text>
-    <Text Include="input2.txt">
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Node.h">
       <Filter>소스 파일</Filter>
-    </Text>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Queue.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrGraph.h">
+    <Text Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\input.txt">
       <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Graph.h">
+    </Text>
+    <Text Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\input2.txt">
       <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ArrGraph2.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Queue.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
+    </Text>
   </ItemGroup>
 </Project>

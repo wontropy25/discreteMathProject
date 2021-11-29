@@ -6,7 +6,7 @@ public:
 	int dist;
 	Node* next = nullptr;
 	Node() = default;
-	Node(int data, int dist = -1) :data(data) {}
+	Node(int data, int dist = -1) :data(data), dist(dist) {}
 	void addNodeEnd(int data, int dist = -1);
 	void addNodeFront(int data, int dist = -1);
 	void showList();

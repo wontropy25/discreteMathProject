@@ -18,6 +18,24 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Graph.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\main - 설명.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Node.cpp" />
+    <ClCompile Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Queue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Graph.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Node.h" />
+    <ClInclude Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\Queue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\input.txt" />
+    <Text Include="..\..\..\..\..\Documents\카카오톡 받은 파일\프로젝트 과제_개선\input2.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,27 +156,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ArrGraph.cpp" />
-    <ClCompile Include="ArrGraph2.cpp" />
-    <ClCompile Include="Graph.cpp" />
-    <ClCompile Include="main.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Queue.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="input.txt" />
-    <Text Include="input2.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ArrGraph.h" />
-    <ClInclude Include="ArrGraph2.h" />
-    <ClInclude Include="Graph.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="Queue.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
